@@ -23,7 +23,7 @@ INSERT INTO student_grades (name, number_grade, fraction_completed)
 SELECT  name, number_grade, ROUND(fraction_completed*100) AS percent_completed
 FROM student_grades;
 
--- Number of student with each letter grade
+-- Number of students that got each letter grade
 SELECT Count(number_grade) AS students, 
 CASE
     WHEN number_grade > 90 THEN "A"
