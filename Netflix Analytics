@@ -26,16 +26,12 @@ WHERE titles.title = 'Bright Star';
 
 
 --#5 What is the oldest movie in the database and what year was it made?
-SELECT titles.title, titles.release_year
+SELECT titles.title, titles.release_year 
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" AS titles
-WHERE type = 'Movie'
-ORDER BY 2 ASC
-LIMIT 1;
+WHERE titles.type = 'Movie'
+AND titles.release_year <= 
+(SELECT MIN(titles.release_year) 
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" AS titles
+WHERE titles.type = 'Movie'); 
 
 
---#6 What are the 10 TV show with the most seasons 
-SELECT titles.title, titles.duration
-FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" AS titles
-WHERE type = 'TV Show'
-ORDER BY 2 DESC
-LIMIT 10;
