@@ -3,9 +3,6 @@ This data comes from the California Highway Patrol and covers collisions from Ja
 
 
 
-
-
-
 1.)On what days are pedestrians involved in collisions?
 
 SELECT  CASE strftime('%w', collision_date) 
@@ -79,4 +76,4 @@ order by Number_of_vehicles DESC
 Limit 10;
 
 
-Data Source: [California Traffic Collision Data from SWITRS](https://www.kaggle.com/datasets/alexgude/california-traffic-collision-data-from-switrs)
+Data Source: Kaggle.com - California Traffic Collision Data from SWITRS - https://www.kaggle.com/datasets/alexgude/california-traffic-collision-data-from-switrs
